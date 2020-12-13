@@ -1,43 +1,35 @@
-# Fibonacci API
+# API Fibonacci
 
-Fibonacci API is a simple REST API to return n number of fibonacci numbers in an array.
+Cette API permet de calculer le résultat de la fonction de Fibonacci, d'obtenir l'index de Fibonnaci le plus proche d'un nombre et de faire des calculs de Fibonacci avec mise en cache pour une meilleure performances sur de grands nombres.
+Elle est inspirée de https://github.com/nicgrayson/fibonacci-api pour le calcul initial et l'usage de Sinatra et utilise la formule de http://www.maths.surrey.ac.uk/hosted-sites/R.Knott/Fibonacci/fibFormula.html#section1 pour la formule inversée.
 
 ## Usage
 
-### GET /:number
+### GET /fibo/:number
 
-#### When :number is positive
+#### Quand number est positif
 
-Fibonacci API Returns :number of fibonacci numbers
+L'API retourne le résultat du calcul de la fonction de Fibonacci
 
-#### When :number is negative
+#### Sinon
+Renvoie une erreur 400
 
-Fibonacci returns a 400 status code
+### GET /fibo_inv/:number
 
-## Deployment
+#### Quand number est positif
 
-Fibonacci API ships with a Dockerfile to create a docker image for deployment. The api listens on port 4567.
+Retourne l'index de Fibonacci le plus proche de number
 
-### Build docker image
 
-`make docker`
+#### Sinon
+Renvoie une erreur 400
 
-### Push
+### GET /fibo_cache/:number
+#### Quand number est positif
 
-`make push`
+L'API retourne le résultat du calcul de la fonction de Fibonacci
 
-### Docker Run
+#### Sinon
+Renvoie une erreur 400
 
-`docker run -d -p "80:4567" fibonacci-api`
-
-## Development
-
-### Run the API locally
-
-Run the following to start the API on localhost:4567
-
-`make run-local`
-
-### Run rspec tests
-
-`make test`
+## Déploiment
