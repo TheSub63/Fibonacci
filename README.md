@@ -6,7 +6,7 @@ API pouvant calculer une fonction de Fibonnaci rapidement, ou trouver l'index de
 Deux fichiers ruby sont proposés : fibonnaci.rb calcule les résultats sans interface directement depuis l'url.
 gui.rb possède une interface graphique permettant à l'utilisateur d'appeler ses fonctions avec une interface dédiée.
 
-##fibonnaci.rb
+##API
 
 Les requêtes attendues par fibonnaci.rb sont de cette forme : 
 
@@ -15,7 +15,7 @@ http://localhost:4567/[fonction]/[parametre]
 La fonction peut être fibo pour un calcul de la suite de Fibonacci classique, fibo_inv pour le calcul de l'index de Fibonnaci le plus proche du paramètre et fibo_cache pour un calcul stockant ses résultats en cache.
 Le paramètre est un entier positif.
 
-##gui.rb
+##GUI
 
 Connectez vous sur la page http://localhost:4567/index et entrez directement vos requêtes dans les champs prévus à cet effet, puis cliquer sur le bouton pour obtenir un résultat.
 
