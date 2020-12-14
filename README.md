@@ -26,16 +26,16 @@ Connectez vous sur la page http://localhost:4567/index et entrez directement vos
 
 Pour déployer l'image via docker, utilisez les commandes suivantes :
 
-make docker 
+`make docker `
 
 Cette commande utilise make pour récupérer l'image docker de l'API non graphique.
 
-docker run -p 4567:4567 clguilbert/fibonacciapi 
+`docker run -p 4567:4567 clguilbert/fibonacciapi `
 
 Celle-ci démarre l'api sur le port 4567
 
 ## Déploiment local
 
-make api -> lance l'api non graphique
+`make api` -> lance l'api non graphique
 
-make gui -> lance l'api graphique
+`make gui` -> lance l'api graphique
