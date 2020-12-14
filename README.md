@@ -30,7 +30,9 @@ make docker
 
 Cette commande utilise make pour récupérer l'image docker de l'API non graphique.
 
-docker run -p 4567:4567 clguilbert/fibonacciapi
+docker run -p 4567:4567 clguilbert/fibonacciapi 
+
+Celle-ci démarre l'api sur le port 4567
 
 ## Déploiment local
 
