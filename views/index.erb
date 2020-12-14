@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <title>Fibonaci API</title>
+  <link rel="stylesheet" href="index.css">
+</head>
+<style>
+    body {
+        background-color: lightblue;
+    }
+
+    #result{
+        display: block;
+        text-align: center;
+    }
+
+    p {
+        display: flex;
+        justify-content: center;
+        font-size: large;
+    }
+
+    label {
+        display: flex;
+        justify-content: center;
+        font-size: x-large;
+    }
+
+    input{
+        display:block;
+        margin:0 auto;
+    }
+
+    h1 {
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 50px;
+        color: darkslateblue;
+        display: flex;
+        justify-content: center;
+    }
+
+    .myButton {
+        box-shadow: 0px 1px 0px 0px #f0f7fa;
+        margin-right: 50%;
+        margin-left: 47%;
+        margin-top: 1%;
+        background:linear-gradient(to bottom, #33bdef 5%, #019ad2 100%);
+        background-color:#33bdef;
+        border-radius:6px;
+        border:1px solid #057fd0;
+        display:inline-block;
+        cursor:pointer;
+        color:#ffffff;
+        font-size:15px;
+        font-weight:bold;
+        padding:6px 24px;
+        text-decoration:none;
+        text-shadow:0px -1px 0px #5b6178;
+    }
+    .myButton:hover {
+        background:linear-gradient(to bottom, #019ad2 5%, #33bdef 100%);
+        background-color:#019ad2;
+    }
+    .myButton:active {
+        position:relative;
+        top:1px;
+    }
+
+</style>
+<body>
+<h1>Fibonacci API</h1>
+
+<!-- This is where the page contents gets inserted -->
+<label for="fibo">Fibonacci sans cache :</label>
+<br>
+<form action="" method="get">
+<input type="number" id="fibo" name="fibo" required size="100">
+  <input type="submit" class="myButton" value="Calculer">
+</form>
+<p>(Fibonacci sans cache est plus efficace pour n<200 000)</p>
+<br>
+<label for="fibo_inv">Fibonacci inverse :</label>
+<br>
+<form action="" method="get">
+<input type="number" id="fibo_inv" name="fibo_inv" required size="100">
+  <input type="submit" class="myButton" value="Calculer">
+</form>
+<br>
+<p></p>
+<br>
+<label for="fibo_cache">Fibonacci avec cache:</label>
+<br>
+<form action="" method="get">
+<input type="number" id="fibo_cache" name="fibo_cache" required size="100">
+<input type="submit" class="myButton" value="Calculer">
+</form>
+<br>
+<h1> Résultat :</h1>
+<div id="result"><%= @res %></div>
+</body>
+</html>

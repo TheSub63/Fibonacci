@@ -10,43 +10,40 @@ get '/' do
   "Fibonacci : entrez '/fibo/votre_nombre'"
 end
 
-get '/fibo/:num' do
-  n = params[:num].to_i
-  if n >= 0
-    get_n_fibonacci_numbers(n+1)[-1].to_s
-  else
-    status 400
-  end
-end
-
-get '/fibo_inv/:num' do
-  if params['num'].to_i >= 0
-    get_n_fibonacci_numbers_inv(params['num'].to_i).round.to_s
-  else
-    status 400
-  end
-end
-
-get '/fibo_cache/:num' do
-  #Initialization des variables
-  n = params['num'].to_i
-  res = ""
-  #Verification de l'argument
-  if n >= 0
-    #Construction incrémentale du cache pour éviter la Stack Too Deep Exception
-    if n > $cache.length + 1000
-      while n > $cache.length + 1000
-        memoize($cache.length + 1000)
-      end
-      res = memoize(n).to_s
+get '/test' do
+  if params.has_key?('fibo')
+    n = params[:fibo].to_i
+    if n >= 0
+      @res = get_n_fibonacci_numbers(n+1)[-1].to_s
     else
-      res = memoize(n).to_s
+      status 400
     end
-  else
-    status 400
+  elsif params.has_key?('fibo_inv')
+    n = params[:fibo_inv].to_i
+    if n >= 0
+      @res = get_n_fibonacci_numbers_inv(n).round.to_s
+    else
+      status 400
+    end
+  elsif params.has_key?('fibo_cache')
+    n = params[:fibo_cache].to_i
+    if n >= 0
+      if n > $cache.length + 1000
+        while n > $cache.length + 1000
+          memoize($cache.length + 1000)
+        end
+        @res = memoize(n).to_s
+      else
+        @res = memoize(n).to_s
+      end
+    else
+      status 400
+    end
   end
-  return res
+
+  erb(:index) # Sinatra will now render the 'app/views/homepage.erb' file when a user visits 'yoursite.com/'
 end
+
 
 private
 def get_n_fibonacci_numbers(num)

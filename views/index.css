@@ -1,0 +1,8 @@
+body {
+    background-color: lightblue;
+}
+
+p, label, input {
+    display: flex;
+    justify-content: center;
+}
