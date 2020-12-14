@@ -12,7 +12,10 @@ Les requêtes attendues par fibonnaci.rb sont de cette forme :
 
 http://localhost:4567/[fonction]/[parametre]
 
-La fonction peut être fibo pour un calcul de la suite de Fibonacci classique, fibo_inv pour le calcul de l'index de Fibonnaci le plus proche du paramètre et fibo_cache pour un calcul stockant ses résultats en cache.
+La fonction peut être fibo pour un calcul de la suite de Fibonacci classique, 
+fibo_inv pour le calcul de l'index de Fibonnaci le plus proche du paramètre, 
+fibo_cache pour un calcul stockant ses résultats en cache.
+
 Le paramètre est un entier positif.
 
 ##GUI
