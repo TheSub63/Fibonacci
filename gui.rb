@@ -10,7 +10,7 @@ get '/' do
   "Fibonacci : entrez '/fibo/votre_nombre'"
 end
 
-get '/test' do
+get '/index' do
   if params.has_key?('fibo')
     n = params[:fibo].to_i
     if n >= 0

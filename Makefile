@@ -5,7 +5,4 @@ gui:
 	ruby gui.rb*
 
 docker:
-	docker build -t fibonacci-api .
-
-push:
-	docker push fibonacci-api
+	docker pull clguilbert/fibonacciapi
