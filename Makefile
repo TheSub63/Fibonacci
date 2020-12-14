@@ -1,8 +1,8 @@
-run-local:
+api:
 	ruby fibonacci.rb*
 
-test:
-	bundle exec rspec
+gui:
+	ruby gui.rb*
 
 docker:
 	docker build -t fibonacci-api .
