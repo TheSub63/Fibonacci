@@ -28,7 +28,7 @@ Pour déployer l'image via docker, utilisez les commandes suivantes :
 
 `make docker `
 
-Cette commande utilise make pour récupérer l'image docker de l'API non graphique.
+Cette commande utilise make pour récupérer l'image docker de l'API non graphique (une branche gui est disponible pour instancier l'API graphique).
 
 `docker run -p 4567:4567 clguilbert/fibonacciapi `
 
